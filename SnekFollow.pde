@@ -31,8 +31,7 @@ void draw() {
   background(0);
   dragSegment(0, target.x, target.y);
   for(int i=0; i<snakeLength; i++) {
-    float segSize = map(snakeLength, 0, 80, 30, 10); 
-    strokeWeight(segSize+i);
+    strokeWeight(map(i, 0, snakeLength, 10, 1));
     dragSegment(i+1, x[i], y[i]);
   }
   target.add(velocity);
@@ -70,7 +69,7 @@ void segment(float x, float y, float a, color c) {
   rotate(a);
   fill(c);
   line(0, 0, segLength, 0);
-  popMatrix(); asd
+  popMatrix(); 
 }
 
 void keyPressed(){
